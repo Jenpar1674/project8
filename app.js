@@ -39,3 +39,14 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize({
+  dialect: 'sqlite',
+  storage: 'movies.db'
+});
+// async IIFE
+(async () => {
+
+})();
