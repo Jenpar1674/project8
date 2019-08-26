@@ -1,0 +1,24 @@
+{
+  "name": "project8",
+  "version": "1.0.0",
+  "description": "SQL Library Manager",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jenpar1674/project8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jenpar1674/project8/issues"
+  },
+  "homepage": "https://github.com/Jenpar1674/project8#readme",
+  "dependencies": {
+    "sequelize": "^5.16.0"
+  }
+}
