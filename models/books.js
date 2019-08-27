@@ -1,5 +1,5 @@
 'use strict';
-var dateFormat = require('dateformat');
+
 
 module.exports = function(sequelize, DataTypes) {
   var Book = sequelize.define('Book', {
@@ -19,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
   },
-   
+  genre: DataTypes.STRING,
+  year: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
