@@ -23,7 +23,7 @@ module.exports = function(sequelize, DataTypes) {
   year: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: function(_models) {
         // associations can be defined here
       }
     },

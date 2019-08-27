@@ -4,22 +4,22 @@
  * Module dependencies.
  */
 
-import app, { set } from '../app';
+var app = require ('../app');
 var debug = require('debug')('express-sequelize');
-import { createServer } from 'http';
-import { sequelize } from '../models';
+var http = require('http');
+var models = require ('../models');
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-set('port', port);
+app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
