@@ -1,7 +1,7 @@
 # project8
  SQL Library Manager
  
-## A CRUD interface using SQLite
+
 A list of books saved in data base. 
 
 ### INSTALL ###
