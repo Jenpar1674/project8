@@ -1,7 +1,7 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var methodOverride = require('method-override')
+
 var bodyParser = require('body-parser');
 
 
@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride('_method'));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
