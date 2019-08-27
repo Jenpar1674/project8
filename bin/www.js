@@ -4,31 +4,33 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('project-8:server');
-var http = require('http');
-var sequelize= require('../models').sequelize;
+import app, { set } from '../app';
+var debug = require('debug')('express-sequelize');
+import { createServer } from 'http';
+import { sequelize } from '../models';
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-sequelize.sync().then(function () {
-server.listen(port)});
+models.sequelize.sync().then(function () {
+server.listen(port,function(){
+  debug('Express server listening on port ' + server.address().port);
+});
 server.on('error', onError);
 server.on('listening', onListening);
-
+});
 /**
  * Normalize a port into a number, string, or false.
  */
