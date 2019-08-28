@@ -2,7 +2,7 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-  var Book = sequelize.define('Book', {
+  const Book = sequelize.define('Book', {
     title: {
       type: DataTypes.STRING,
       validate: {
@@ -21,17 +21,9 @@ module.exports = function(sequelize, DataTypes) {
   },
   genre: DataTypes.STRING,
   year: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(_models) {
-        // associations can be defined here
-      }
-    },
-    instanceMethods: {
- 
-      },
-     
-    }
-  );
+  }, {});
+  Book.associate = function(models) {
+    // associations can be defined here
+  };
   return Book;
-};
+}; 

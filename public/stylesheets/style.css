@@ -23,7 +23,11 @@ a.button, input[type=submit] {
   border-radius: 2px;
   cursor: pointer;
 }
-
+pagination li {
+  display: inline-flex;
+  justify-content: space-between;
+  margin: 1em;
+}
 form a.button, input[type=submit] {
   margin-left: 140px;
   transition: 0.4s;

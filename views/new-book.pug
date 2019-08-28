@@ -3,7 +3,7 @@ extends ../layout
 block content
     h1 New Book
     form(action="/books/new", method="post")
-        include error
+        include errors
         p
             label(for="title") Title
             input(type="text", name="title", id="title", value=book.title)

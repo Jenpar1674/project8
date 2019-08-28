@@ -1,8 +1,16 @@
+//- extends layout
+
 extends layout
 
 block content
-  h1 Error #{error.status}: #{message}
+  h1 Page Not Found
+  p Sorry! We couldn't find the page you were looking for.
+  br
   p
-    a(href="/") home
-  a(href="/")
-    img(src="/img/404.jpg", alt="404")
+    a.button(href='all_books.html') Home
+//- block content
+//-   h1 Error #{error.status}: #{message}
+//-   p
+//-     a(href="/") home
+//-   a(href="/")
+//-     img(src="/img/404.jpg", alt="404")
