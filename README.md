@@ -8,8 +8,8 @@ A list of books saved in data base.
 <b>Steps:</b> <br />
 <ol>
  <li>@ download files</li>
- <li>@ install dependecies -> npm install in folder</li>
- <li>@ start project -> npm start in folders</li>
+ <li>@ install dependecies -> npm install </li>
+ <li>@ start project -> npm start </li>
 </ol>
 
 
