@@ -6,12 +6,12 @@
   },
   "test": {
     "dialect": "sqlite",
-    "storage": "library.db"
+    "storage": "test.db"
     
   },
   "production": {
     "dialect": "sqlite",
-    "storage": "library.db"
+    "storage": "production.db"
     
   }
 }
