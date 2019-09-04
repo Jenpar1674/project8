@@ -29,7 +29,7 @@ router.post('/search', (req, res, next) => {
   .then( books => res.render('index',  { title: 'Search Results', books }) );
 })
 
-/* GET new books form listing. */
+/* GET new books from listing. */
 router.get('/new', (req, res, next) => res.render('new-book',  { title: 'New Book', book: Book.build() }) );
 
 /* POST CREATE new books by id. */
@@ -63,12 +63,33 @@ router.get('/:id', (req, res, next) => {
 });
 
 /* POST UPDATE books by id. */
-router.post('/:id', (req, res, next) => {
-  Book.findByPk(req.params.id)
-  .then( book => book.update(req.body) )
-  .then( () => res.redirect('/books') )
-  .catch(error => res.sendStatus(500, error));
+router.post("/:id", function(req, res, next){
+  
+
+  Book.findByPk(req.params.id).then(function(book){
+    if(book){
+      return book.update(req.body);
+    } else {
+      res.redirect('/books');
+    }
+  }).then(function(book){
+    res.redirect('/books');
+  }).catch(function(err){
+    if(err.name === "SequelizeValidationError"){
+      let book = Book.build(req.body);
+      book.id = req.params.id;
+      res.render("update-book", { 
+        book: book,
+        errors: err.errors
+      });
+    } else {
+      throw err;
+    }
+  }).catch(function(err){
+    next(err);
+  });
 });
+
 
 /* POST DELETE books by id. */
 router.post('/:id/delete', (req, res, next) =>{
